@@ -10,7 +10,7 @@ export const SocketProvider = ({ children }) => {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    const newSocket = io('http://localhost:5000');
+    const newSocket = io('https://parksmart-g4ir.onrender.com');
     newSocket.on('connect', () => console.log('Socket connected'));
     newSocket.on('occupancy-update', (updatedZones) => setZones(updatedZones));
     newSocket.on('new-activity', (activity) => setActivities(prev => [activity, ...prev].slice(0, 50)));

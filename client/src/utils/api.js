@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://parksmart-g4ir.onrender.com/api',
-  headers: { 'Content-Type': 'application/json' }
+  baseURL: "https://parksmart-g4ir.onrender.com/api",
+  headers: { "Content-Type": "application/json" }
 });
 
 api.interceptors.request.use((config) => {

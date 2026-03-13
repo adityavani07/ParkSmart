@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://parksmart.onrender.com/api',
+  baseURL: 'https://parksmart-g4ir.onrender.com/api',
   headers: { 'Content-Type': 'application/json' }
 });
 

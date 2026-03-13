@@ -15,8 +15,17 @@ const Login = () => {
     setLoading(true);
     try {
       const data = await login(email, password);
-      toast.success(`Welcome back, ${data.name}!`);
-      navigate(data.role === 'user' ? '/dashboard' : '/admin');
+
+toast.success(`Welcome back, ${data.name}!`);
+
+// wait for state update
+setTimeout(() => {
+  if (data.role === "user") {
+    navigate("/dashboard");
+  } else {
+    navigate("/admin");
+  }
+}, 100);
     } catch (error) {
       toast.error(error.response?.data?.message || 'Login failed');
     }

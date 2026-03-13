@@ -20,21 +20,12 @@ export const AuthProvider = ({ children }) => {
 
   const token = res.data.token;
 
-  const user = {
-    _id: res.data._id,
-    name: res.data.name,
-    email: res.data.email,
-    role: res.data.role,
-    department: res.data.department,
-    userType: res.data.userType
-  };
-
   localStorage.setItem("token", token);
-  localStorage.setItem("user", JSON.stringify(user));
+  localStorage.setItem("user", JSON.stringify(res.data));
 
-  setUser(user);
+  setUser(res.data);
 
-  return user;
+  return res.data;
 };
 
   const register = async (userData) => {
